@@ -1,6 +1,13 @@
 package interface_adapter.clear_users;
 
-// TODO Complete me
-
 public class ClearState {
+    private String statusMessage = "";
+
+    public String getStatusMessage() {
+        return statusMessage;
+    }
+
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+    }
 }
