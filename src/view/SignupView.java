@@ -27,7 +27,7 @@ public class SignupView extends JPanel implements ActionListener, PropertyChange
     private final JButton signUp;
     private final JButton cancel;
 
-    // TODO Note: this is the new JButton for clearing the users file
+    // Note: this is the new JButton for clearing the users file
     private final JButton clear;
 
     public SignupView(SignupController controller, SignupViewModel signupViewModel, ClearController clearController) {

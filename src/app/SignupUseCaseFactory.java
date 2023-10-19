@@ -1,5 +1,6 @@
 package app;
 
+import interface_adapter.clear_users.ClearController;
 import interface_adapter.login.LoginViewModel;
 import interface_adapter.signup.SignupController;
 import interface_adapter.signup.SignupPresenter;
@@ -22,11 +23,18 @@ public class SignupUseCaseFactory {
     private SignupUseCaseFactory() {}
 
     public static SignupView create(
-            ViewManagerModel viewManagerModel, LoginViewModel loginViewModel, SignupViewModel signupViewModel, SignupUserDataAccessInterface userDataAccessObject) {
+            ViewManagerModel viewManagerModel,
+            LoginViewModel loginViewModel,
+            SignupViewModel signupViewModel,
+            SignupUserDataAccessInterface userDataAccessObject) {
 
         try {
             SignupController signupController = createUserSignupUseCase(viewManagerModel, signupViewModel, loginViewModel, userDataAccessObject);
-            return new SignupView(signupController, signupViewModel);
+
+            // Assuming ClearController exists and has a constructor that accepts userDataAccessObject
+            ClearController clearController = new ClearController(userDataAccessObject);
+
+            return new SignupView(signupController, signupViewModel, clearController);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Could not open user data file.");
         }

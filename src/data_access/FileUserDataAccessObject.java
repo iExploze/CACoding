@@ -96,8 +96,8 @@ public class FileUserDataAccessObject implements SignupUserDataAccessInterface, 
     }
 
     @Override
-    public List<User> getAllUsers() {
-        return new ArrayList<>(accounts.values());
+    public List<String> getAllUsers() {
+        return new ArrayList<>(Integer.parseInt(accounts.values().toString()));
     }
 
     @Override
