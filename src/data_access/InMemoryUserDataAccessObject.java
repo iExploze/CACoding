@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class InMemoryUserDataAccessObject implements SignupUserDataAccessInterface, ClearUserDataAccessInterface {
+public class InMemoryUserDataAccessObject implements SignupUserDataAccessInterface {
 
     private final Map<String, User> users = new HashMap<>();
 
@@ -30,13 +30,4 @@ public class InMemoryUserDataAccessObject implements SignupUserDataAccessInterfa
         users.put(user.getName(), user);
     }
 
-    @Override
-    public List<User> getAllUsers() {
-        return new ArrayList<>(users.values());
-    }
-
-    @Override
-    public void clearAllUsers() {
-        users.clear();
-    }
 }
