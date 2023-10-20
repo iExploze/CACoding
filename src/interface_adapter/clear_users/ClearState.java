@@ -1,6 +1,9 @@
 package interface_adapter.clear_users;
 
 public class ClearState {
+
+    public ClearState() {
+    }
     private String statusMessage = "";
 
     public String getStatusMessage() {

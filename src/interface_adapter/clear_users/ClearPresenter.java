@@ -18,9 +18,9 @@ public class ClearPresenter implements ClearOutputBoundary {
         String resultMessage;
 
         if (deletedUsers.isEmpty()) {
-            resultMessage = "No users were cleared.";
+            resultMessage = "";
         } else {
-            resultMessage = String.format("%d users were cleared: %s", deletedUsers.size(), String.join(", ", deletedUsers));
+            resultMessage = String.join("\n", deletedUsers);
         }
 
         ClearState clearState = clearViewModel.getState();
